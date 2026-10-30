@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { sourceMeta } from './capture.js';
 import { planSlide } from './render.js';
 import { MIN_IDE_TEXT_PX } from './geometry.js';
@@ -13,6 +14,10 @@ export async function validate(spec) {
   const out = [];
   const err = (slide, msg) => out.push({ level: 'error', slide, msg });
   const warn = (slide, msg) => out.push({ level: 'warn', slide, msg });
+
+  if (spec.brand.logo && !fs.existsSync(spec.brand.logo)) {
+    warn('brand', `logo not found: ${spec.brand.logo}`);
+  }
 
   const ids = new Set();
   for (const s of spec.slides) {

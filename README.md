@@ -30,6 +30,20 @@ These were rendered from [`examples/air/shots.yaml`](examples/air/shots.yaml) us
 | **`text-left` with `highlight`** | |
 | ![Inline prompt over the editor](docs/images/air/05-inline-prompt.png) | |
 
+### HTTP Client plugin
+
+Rendered from [`examples/http-client/shots.yaml`](examples/http-client/shots.yaml) using real HiDPI captures (2560×1600, IDE at 200%, `uiScale: 2`) of the HTTP Client plugin.
+
+| `text-right` with `highlight` | `hero` |
+|---|---|
+| ![Generate a request from a Spring controller mapping](docs/images/http-client/01-gutter-actions.png) | ![Completion for random variables](docs/images/http-client/02-random-variables.png) |
+| **`text-left` with `highlight`** | **`hero`** |
+| ![Request body completion from an OpenAPI spec](docs/images/http-client/03-schema-completion.png) | ![JavaScript response test with passing results](docs/images/http-client/04-response-tests.png) |
+| **`text-right` with `highlight`** | **`hero` with `highlight`** |
+| ![Generate a request from a URL string in client code](docs/images/http-client/05-client-code-url.png) | ![Environment quick fix next to the Endpoints list](docs/images/http-client/06-environments-endpoints.png) |
+| **`hero`** | |
+| ![Usages of a URL path segment across the project](docs/images/http-client/07-url-usages.png) | |
+
 ## Install
 
 mpshots is installed straight from this GitHub repository; it isn't on the npm registry. You need Node.js 18.17 or newer and git.

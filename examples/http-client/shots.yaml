@@ -1,0 +1,75 @@
+# Example spec using real captures of the HTTP Client plugin (2560×1600, IDE at 200%).
+output:
+  width: 1920
+  dir: out
+theme: dark
+brand:
+  name: HTTP Client
+  # logo: assets/icon.svg   # save the plugin icon from the Marketplace here
+  accent: "#8C5CF5"
+defaults:
+  uiScale: 2              # HiDPI capture: IDE UI at 200%
+
+slides:
+  - id: gutter-actions
+    layout: text-right
+    align: center
+    headline: Send a request straight from your controller
+    body: Generate an HTTP request from any @GetMapping or @PostMapping in one click.
+    screenshot:
+      src: screenshots/gutter-actions.png
+      crop: [0, 0, 1400, 1478]
+      highlight: [603, 674, 662, 350]
+
+  - id: random-variables
+    layout: hero
+    headline: Realistic test data with random variables
+    body: Use $random.email, $random.uuid and more in any request
+    screenshot:
+      src: screenshots/random-variables.png
+      crop: [0, 384, 2560, 1120]
+
+  - id: schema-completion
+    layout: text-left
+    align: center
+    headline: Request bodies completed from your OpenAPI spec
+    body: Property names and types come straight from your swagger.yaml.
+    screenshot:
+      src: screenshots/schema-completion.png
+      crop: [0, 0, 1400, 1478]
+      highlight: [225, 614, 847, 435]
+
+  - id: response-tests
+    layout: hero
+    headline: Test responses with JavaScript
+    body: Assert status, headers and body, and see results like any other test
+    screenshot:
+      src: screenshots/response-tests.png
+      crop: [0, 300, 2560, 1120]
+
+  - id: client-code-url
+    layout: text-right
+    align: center
+    headline: Turn any URL in your code into a request
+    body: Works on URL strings in client code too, such as WebClient calls.
+    screenshot:
+      src: screenshots/client-code-url.png
+      crop: [230, 40, 1400, 1478]
+      highlight: [609, 906, 1018, 589]
+
+  - id: environments-endpoints
+    layout: hero
+    headline: Environments and endpoints in one place
+    body: Create variables from a quick fix and browse every endpoint in your project
+    screenshot:
+      src: screenshots/environments-endpoints.png
+      crop: [0, 294, 2560, 1120]
+      highlight: [726, 506, 1236, 429]
+
+  - id: url-usages
+    layout: hero
+    headline: Find every usage of an endpoint
+    body: Jump from a request to controllers, clients, tests and frontend code
+    screenshot:
+      src: screenshots/url-usages.png
+      crop: [860, 346, 1672, 731]
