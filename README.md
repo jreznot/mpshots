@@ -20,38 +20,21 @@ These slides were rendered from [`examples/shots.yaml`](examples/shots.yaml). Th
 
 mpshots is installed straight from this GitHub repository; it isn't on the npm registry. You need Node.js 18.17 or newer and git.
 
-**Add it to your plugin project (recommended).** This pins a version and makes `npx mpshots` use it:
-
-```sh
-npm i -D github:jreznot/mpshots#v0.1.0
-```
-
-**Run it once without installing:**
-
-```sh
-npx github:jreznot/mpshots#v0.1.0 init
-```
-
-**Install it globally:**
-
 ```sh
 npm i -g github:jreznot/mpshots#v0.1.0
 mpshots --help
 ```
 
-Pin a release tag (`#v0.1.0`) so everyone on the project renders with the same version. Leaving the tag off installs the latest `main`.
-
-To upgrade, install again with the new tag. npm can't pick up new versions from a git dependency on its own, so `npm update` won't do it.
+The `#v0.1.0` tag pins a release; leaving it off installs the latest `main`. To upgrade, run the same command with the new tag.
 
 ## Quick start
 
 ```sh
-npm i -D github:jreznot/mpshots#v0.1.0
-npx mpshots init            # creates shots.yaml and screenshots/
+mpshots init            # creates shots.yaml and screenshots/
 # put raw IDE captures in screenshots/
-npx mpshots grid screenshots/raw-1.png   # writes raw-1.grid.png with pixel coordinates
+mpshots grid screenshots/raw-1.png   # writes raw-1.grid.png with pixel coordinates
 # edit crop/highlight values in shots.yaml
-npx mpshots build           # → marketplace-screenshots/01-overview.png …, index.html
+mpshots build           # → marketplace-screenshots/01-overview.png …, index.html
 ```
 
 Open `marketplace-screenshots/index.html` to see every slide at about 800px wide, roughly what the Marketplace carousel shows. If IDE text is hard to read there, it will be hard to read on the Marketplace too.
