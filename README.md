@@ -6,10 +6,37 @@ You give it raw 1920×1080 or 2560×1440 screenshots and a short YAML spec. It p
 
 No browser is needed. Rendering uses [satori](https://github.com/vercel/satori) for layout, [resvg](https://github.com/yisibl/resvg-js) for rasterizing and [sharp](https://sharp.pixelplumbing.com/) for pixels, so it runs anywhere Node 18+ does, including CI.
 
+## Install
+
+mpshots is installed straight from this GitHub repository; it isn't on the npm registry. You need Node.js 18.17 or newer and git.
+
+**Add it to your plugin project (recommended).** This pins a version and makes `npx mpshots` use it:
+
+```sh
+npm i -D github:jreznot/mpshots#v0.1.0
+```
+
+**Run it once without installing:**
+
+```sh
+npx github:jreznot/mpshots#v0.1.0 init
+```
+
+**Install it globally:**
+
+```sh
+npm i -g github:jreznot/mpshots#v0.1.0
+mpshots --help
+```
+
+Pin a release tag (`#v0.1.0`) so everyone on the project renders with the same version. Leaving the tag off installs the latest `main`.
+
+To upgrade, install again with the new tag. npm can't pick up new versions from a git dependency on its own, so `npm update` won't do it.
+
 ## Quick start
 
 ```sh
-npm i -D mpshots            # or: npx mpshots …
+npm i -D github:jreznot/mpshots#v0.1.0
 npx mpshots init            # creates shots.yaml and screenshots/
 # put raw IDE captures in screenshots/
 npx mpshots grid screenshots/raw-1.png   # writes raw-1.grid.png with pixel coordinates
