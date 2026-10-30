@@ -1,0 +1,31 @@
+{
+  "name": "mpshots",
+  "version": "0.1.0",
+  "description": "Compose JetBrains Marketplace plugin screenshots from raw IDE captures",
+  "scripts": {
+    "example": "node examples/make-mocks.js && node bin/mpshots.js build examples/shots.yaml"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.63.2",
+    "sharp": "^0.35.5",
+    "yaml": "^2.9.1"
+  },
+  "type": "module",
+  "bin": {
+    "mpshots": "bin/mpshots.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "devDependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0"
+  }
+}

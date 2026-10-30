@@ -1,0 +1,4 @@
+node_modules/
+examples/out/
+examples/screenshots/
+*.grid.png

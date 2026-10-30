@@ -1,0 +1,57 @@
+# Example spec using the mock captures from make-mocks.js
+output:
+  width: 1920
+  dir: out
+theme: dark
+brand:
+  name: Storybook Connect
+  logo: assets/logo.svg
+  accent: "#E8336D"
+defaults:
+  uiScale: 1.5
+  footnote: "JetBrains IDEs include: WebStorm, IntelliJ IDEA, PyCharm, Rider, and others"
+
+slides:
+  - id: overview
+    layout: text-left
+    headline: Your components, right where you're coding
+    body: Browse components without leaving your JetBrains IDE. Give your AI agent real Storybook context so it generates UI that matches your design system.
+    screenshot:
+      src: screenshots/ide-2560.png       # 2560×1440 at 150% IDE zoom
+      crop: [0, 0, 1130, 1190]
+
+  - id: stories
+    layout: text-right
+    align: center
+    headline: Jump from a story straight to its code
+    footnote: []
+    screenshot:
+      src: screenshots/ide-1920.png       # 1920×1080 at 125% IDE zoom
+      uiScale: 1.25
+      crop: [0, 0, 940, 1000]
+      highlight: [58, 318, 460, 32]
+
+  - id: hero
+    layout: hero
+    headline: Explore the story tree and sync selection
+    body: Manage your local Storybook dev server from the IDE
+    screenshot:
+      src: screenshots/ide-2560.png
+      crop: [0, 0, 1950, 860]
+
+  - id: preview
+    layout: text-left
+    align: center
+    headline: Preview stories next to the code
+    body: Selection stays in sync between the IDE and your running Storybook.
+    footnote: []
+    screenshot:
+      src: screenshots/ide-2560.png
+      crop: [0, 0, 1130, 1190]
+      highlight: [69, 381, 552, 39]
+    overlay:
+      src: screenshots/browser-2560.png
+      crop: [0, 0, 900, 560]
+      x: 1130
+      y: 560
+      width: 760

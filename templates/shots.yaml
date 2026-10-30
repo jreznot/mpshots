@@ -1,0 +1,51 @@
+# mpshots spec — composes raw IDE screenshots into JetBrains Marketplace slides.
+# Run:  npx mpshots validate   then   npx mpshots build
+
+output:
+  width: 1920            # 1920 | 2560 | 3840 — all 16:9, so every slide has the same aspect ratio
+  dir: marketplace-screenshots
+
+theme: dark              # dark | light — match the IDE theme in your captures (Marketplace asks for the default theme)
+
+brand:
+  name: My Plugin
+  logo: src/main/resources/META-INF/pluginIcon.svg   # optional, SVG or PNG
+  accent: "#7B61FF"      # tints the background glow and highlight boxes
+
+# fonts:                 # optional; defaults to Inter (bundled). TTF/OTF/WOFF, not WOFF2.
+#   regular: fonts/MySans-Regular.ttf
+#   semibold: fonts/MySans-SemiBold.ttf
+#   bold: fonts/MySans-Bold.ttf
+
+defaults:
+  uiScale: 1             # IDE zoom used when capturing: 1 = 100%, 1.5 = 150%, 2 = Retina/200%
+  # footnote: "Works in IntelliJ IDEA, WebStorm, PyCharm and other JetBrains IDEs"
+
+slides:
+  - id: overview
+    layout: text-left    # text-left | text-right | hero | window
+    align: top           # top | center (vertical position of the text block)
+    headline: Connect your designs with JetBrains IDEs
+    body:
+      - See designs right next to your code
+      - Add design layers to AI chat as context
+    footnote: Requires the Desktop app
+    screenshot:
+      src: screenshots/raw-1.png          # raw 1920×1080 or 2560×1440 capture
+      crop: [0, 0, 1100, 1000]            # [x, y, w, h] in source px — run "mpshots grid" to read coordinates
+      # highlight: [80, 420, 520, 34]     # optional outline(s) around the thing to look at
+      # fit: fill                         # fill (default) | width | height
+
+  - id: details
+    layout: text-right
+    align: center
+    headline: Browse layers without leaving the IDE
+    screenshot:
+      src: screenshots/raw-2.png
+      crop: [900, 0, 1020, 1000]
+    # overlay:                            # optional second window floating on top
+    #   src: screenshots/browser.png
+    #   crop: [0, 0, 1200, 900]
+    #   x: 60          # logical canvas px (canvas is always 1920×1080 logically)
+    #   y: 540
+    #   width: 760
