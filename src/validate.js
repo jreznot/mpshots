@@ -2,7 +2,7 @@ import { sourceMeta } from './capture.js';
 import { planSlide } from './render.js';
 import { MIN_IDE_TEXT_PX } from './geometry.js';
 
-const KNOWN_SOURCES = ['1920x1080', '2560x1440', '3840x2160'];
+const MIN_SOURCE = { width: 1920, height: 1080 };
 const HEADLINE_MAX = 60;
 const BODY_MAX = 240;
 
@@ -24,8 +24,8 @@ export async function validate(spec) {
       if (!shot) continue;
       const m = await sourceMeta(shot.src);
       if (!m) { err(tag, `${label}: file not found: ${shot.srcLabel}`); continue; }
-      if (!KNOWN_SOURCES.includes(`${m.width}x${m.height}`)) {
-        warn(tag, `${label}: source is ${m.width}×${m.height}; expected a raw 1920×1080 or 2560×1440 capture`);
+      if (label === 'screenshot' && (m.width < MIN_SOURCE.width || m.height < MIN_SOURCE.height)) {
+        warn(tag, `${label}: source is ${m.width}×${m.height}; capture at least 1920×1080 (2560×1440 or Retina is better)`);
       }
       if (shot.crop && !inside(shot.crop, m)) err(tag, `${label}.crop ${JSON.stringify(shot.crop)} is outside the ${m.width}×${m.height} image`);
       shot.highlight.forEach((r, i) => {

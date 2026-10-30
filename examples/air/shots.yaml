@@ -1,0 +1,55 @@
+# Example spec using real window captures of the Air plugin (macOS Retina, 2800×1800).
+output:
+  width: 1920
+  dir: out
+theme: dark
+brand:
+  name: Air
+  accent: "#3574F0"
+defaults:
+  uiScale: 2              # Retina capture: IDE UI at 2×
+
+slides:
+  - id: agent-sessions
+    layout: text-left
+    headline: All your agent sessions, organized by project
+    body: Track progress, cost and changes for every session, then review what the agent did.
+    screenshot:
+      src: screenshots/agent-sessions.png
+      crop: [0, 0, 1400, 1480]
+
+  - id: accounts
+    layout: hero
+    headline: Bring your own agent and account
+    body: Switch between JetBrains AI, a ChatGPT account or your own API key
+    screenshot:
+      src: screenshots/accounts.png
+      crop: [574, 996, 1645, 720]
+      highlight: [1561, 1256, 637, 413]
+
+  - id: terminal-agent
+    layout: text-right
+    align: center
+    headline: Run terminal agents with IDE context
+    body: The current file, symbol and selection go to your CLI agent automatically.
+    screenshot:
+      src: screenshots/terminal-agent.png
+      crop: [770, 0, 1400, 1480]
+
+  - id: diff-review
+    layout: hero
+    headline: Review agent changes file by file
+    body: Comment on any line and ask the agent to revise it
+    screenshot:
+      src: screenshots/diff-review.png
+      crop: [84, 84, 2600, 1138]
+
+  - id: inline-prompt
+    layout: text-left
+    align: center
+    headline: Ask about code without leaving the editor
+    body: Select code, describe the task, and run it locally or in the cloud.
+    screenshot:
+      src: screenshots/inline-prompt.png
+      crop: [693, 0, 1400, 1480]
+      highlight: [752, 626, 1296, 550]
