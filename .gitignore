@@ -4,3 +4,4 @@ examples/screenshots/
 *.grid.png
 examples/*/out/
 .idea
+.DS_Store
