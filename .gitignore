@@ -3,3 +3,4 @@ examples/out/
 examples/screenshots/
 *.grid.png
 examples/*/out/
+.idea
